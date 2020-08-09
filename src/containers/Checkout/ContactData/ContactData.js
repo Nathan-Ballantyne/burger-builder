@@ -16,16 +16,16 @@ class ContactData extends Component {
     };
 
     orderHandler = (event) => {
-      event.preventDefault();
+        event.preventDefault();
         this.setState({ loading: true });
         const order = {
             ingredients: this.props.ingredients,
-            price: this.props.price.toFixed(2),
+            price: this.props.price,
             customer: {
                 name: 'Nathan Ballantyne',
                 address: {
                     street: 'Teststreet 1',
-                    zipCode: 5876,
+                    zipCode: '5876',
                     country: 'New Zealand',
                 },
                 email: 'test@example.com',
@@ -44,7 +44,6 @@ class ContactData extends Component {
     };
 
     render() {
-      console.log(this.props);
         let form = (
             <form>
                 <input
